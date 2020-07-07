@@ -1,0 +1,52 @@
+/*
+Theme Name: Inovaciju dienos
+Theme URL: http://yourdomain.com
+Description: Twenty Twenty Child
+Theme Author: Almantas Raguckas
+Author URL: https://orlov.lt/
+Template: twentytwenty
+Version: 1.0.0
+Text Domain: twentytwenty-child
+
+ */
+
+
+.dashicons {
+    font-size: 35px;
+}
+
+.dashicons {
+    color: #FCA146;
+}
+.header-navigation-wrapper {
+    margin-right: 5%;
+}
+
+.header-inner {
+    justify-content: flex-start;
+}
+
+.elementor-71 .elementor-element {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.elementor-column-wrap {
+    padding: 0 !important;
+}
+
+.toggle .nav-toggle:hover {
+    text-decoration: none;
+}
+
+.elementor {
+    max-width: 100% !important;
+}
+
+.number {
+    background-color: #FCA146;
+    border-radius: 100px;
+    padding: 20px 36px 20px 36px;
+    font-size: 30px;
+    width: max-content;
+}
