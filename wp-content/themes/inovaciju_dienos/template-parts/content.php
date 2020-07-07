@@ -12,90 +12,87 @@
  */
 
 ?>
-<header id="site-header" class="header-footer-group" role="banner">
+<div class="header-inner section-inner">
+    <div class="header-navigation-wrapper">
 
-    <div class="header-inner section-inner">
-        <div class="header-navigation-wrapper">
+        <?php
+        if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+            ?>
 
-            <?php
-            if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-                ?>
+            <nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
 
-                <nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
-
-                    <ul class="primary-menu reset-list-style">
-
-                        <?php
-                        if ( has_nav_menu( 'primary' ) ) {
-
-                            wp_nav_menu(
-                                array(
-                                    'container'  => '',
-                                    'items_wrap' => '%3$s',
-                                    'theme_location' => 'primary',
-                                )
-                            );
-
-                        } elseif ( ! has_nav_menu( 'expanded' ) ) {
-
-                            wp_list_pages(
-                                array(
-                                    'match_menu_classes' => true,
-                                    'show_sub_menu_icons' => true,
-                                    'title_li' => false,
-                                    'walker'   => new TwentyTwenty_Walker_Page(),
-                                )
-                            );
-
-                        }
-                        ?>
-
-                    </ul>
-
-                </nav><!-- .primary-menu-wrapper -->
-
-                <?php
-            }
-
-            if ( true === $enable_header_search || has_nav_menu( 'expanded' ) ) {
-                ?>
-
-                <div class="header-toggles hide-no-js">
+                <ul class="primary-menu reset-list-style">
 
                     <?php
-                    if ( has_nav_menu( 'expanded' ) ) {
-                        ?>
+                    if ( has_nav_menu( 'primary' ) ) {
 
-                        <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                        wp_nav_menu(
+                            array(
+                                'container'  => '',
+                                'items_wrap' => '%3$s',
+                                'theme_location' => 'primary',
+                            )
+                        );
 
-                            <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-                                <span class="dashicons dashicons-menu-alt"></span>
-                            </button><!-- .nav-toggle -->
+                    } elseif ( ! has_nav_menu( 'expanded' ) ) {
 
-                        </div><!-- .nav-toggle-wrapper -->
+                        wp_list_pages(
+                            array(
+                                'match_menu_classes' => true,
+                                'show_sub_menu_icons' => true,
+                                'title_li' => false,
+                                'walker'   => new TwentyTwenty_Walker_Page(),
+                            )
+                        );
 
-                        <?php
-                    }
-
-                    if ( true === $enable_header_search ) {
-                        ?>
-
-
-
-                        <?php
                     }
                     ?>
 
-                </div><!-- .header-toggles -->
-                <?php
-            }
+                </ul>
+
+            </nav><!-- .primary-menu-wrapper -->
+
+            <?php
+        }
+
+        if ( true === $enable_header_search || has_nav_menu( 'expanded' ) ) {
             ?>
 
-        </div>
+            <div class="header-toggles hide-no-js">
+
+                <?php
+                if ( has_nav_menu( 'expanded' ) ) {
+                    ?>
+
+                    <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+
+                        <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                            <span class="dashicons dashicons-menu-alt"></span>
+                        </button><!-- .nav-toggle -->
+
+                    </div><!-- .nav-toggle-wrapper -->
+
+                    <?php
+                }
+
+                if ( true === $enable_header_search ) {
+                    ?>
+
+
+
+                    <?php
+                }
+                ?>
+
+            </div><!-- .header-toggles -->
+            <?php
+        }
+        ?>
 
     </div>
 
-</header><!-- #site-header -->
+</div>
+
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
