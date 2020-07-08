@@ -266,11 +266,30 @@ header {
 .navbar {
     box-shadow: none;
 }
+.primary-menu > li > a{
+    color: #4E4E4E;
+}
 
+.primary-menu > li > a > svg {
+    width: 8%;
+}
+
+#collapseExample {
+    margin-left: 7%;
+}
+
+.primary-menu > li > a:hover {
+    text-decoration: none;
+    color: #FCA146 !important;
+}
 
 @media (min-width: 1220px) {
     .primary-menu > li {
         margin: 3.8rem 0 0 2.5rem;
     }
+}
+
+.primary-menu-wrapper {
+    display: unset;
 }
 

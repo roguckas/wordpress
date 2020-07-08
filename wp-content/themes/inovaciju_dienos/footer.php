@@ -23,7 +23,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 <script>
-
     $(document).ready(function () {
 
         $('.first-button').on('click', function () {
@@ -38,7 +37,26 @@
 
             $('.animated-icon3').toggleClass('open');
         });
+
+        $( "#menu-item-311" ).addClass( "collapsible" );
+
     });
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+
 </script>
 
 	</body>
